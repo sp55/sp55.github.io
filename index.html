@@ -236,6 +236,147 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/20/JavaScript入门学习/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Ji">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://7xv8pg.com1.z0.glb.clouddn.com/gyy_92">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ji's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Ji's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/20/JavaScript入门学习/" itemprop="url">
+                  JavaScript入门学习
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-20T20:06:18+08:00">
+                2016-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="关于JS"><a href="#关于JS" class="headerlink" title="关于JS"></a>关于JS</h3><p>JS也就是JavaScript，是一种浏览器客户端的脚本语言，给html网页增加动态功能，比如动画，如果想掌握好H5，JS是必须要掌握的。</p>
+<h3 id="JS的基本语法"><a href="#JS的基本语法" class="headerlink" title="JS的基本语法"></a>JS的基本语法</h3><p>js中，一般以var来定义一个变量，与OC不同，和swift相同，var定义的对象不需要指定类型，会根据对象的内容自动进行判断,如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var age = 18;  //number</div><div class="line">var money =  1.82;//number</div><div class="line">var name = &apos;Jack&apos;;//string</div><div class="line">var	 name1 = &apos;Rose&apos;; //string</div><div class="line">var result = true; //false  boolean</div><div class="line">var score  = null;//object</div></pre></td></tr></table></figure>
+<p>而字符串的拼接也和swift一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//字符串拼接</div><div class="line">//运算时从左向右，任何类型的变量与string类型拼接都会被转化为string</div><div class="line">var newName = name +&quot;-&quot;+ name1;</div><div class="line">var str1 = 10 + 10 + &apos;10&apos; + &apos;10&apos;; //201010</div><div class="line">var str2 = &apos;10&apos; + &apos;10&apos; + 10 + 10; //10101010</div><div class="line">var str3 = (&apos;10&apos; + 10) + &quot;10&quot; + 10; //10101010</div></pre></td></tr></table></figure>
+<p>那么我们一般如何调试呐,分为控制台和提示框。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//输出 单引号双引号都行  建议单引号 因为按钮是 OnClick = &quot;&quot;  相当于断点</div><div class="line">alert(&apos;Hello World&apos;);</div><div class="line">//调试输出    谷歌浏览器  审查元素-console</div><div class="line">console.log(&quot;调试输出&quot;)</div><div class="line">//想知道真实类型</div><div class="line">//typeof</div><div class="line">console.log(age,money,name,result,score);</div><div class="line">console.log(typeof age,typeof money,typeof name,typeof result,typeof score);</div></pre></td></tr></table></figure>
+<p>数组的基本定义,数组里面可以包含数组，和OC不同，数组里面可以包含不同类型的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var newArr1 = [];</div><div class="line">var newArr2 = [10, 05, age,name,result,score,[&apos;hahaha&apos;,&apos;阿萨德&apos;]]; //object</div><div class="line">//删除数组最后一个元素</div><div class="line">newArr2.pop();</div><div class="line">//数组中加一个元素</div><div class="line">newArr2.push([&apos;jay&apos;]);</div><div class="line">var newNumbers = [10,-9,232,4554];</div><div class="line">//取出最小值</div><div class="line">var minNumber1 = Math.min(10,23,34,54);</div><div class="line">var minNumber2 = Math.min().apply(null,newNumbers);</div><div class="line">//取出最大值</div><div class="line">var maxNumber = Math.max(null,newNumbers);</div><div class="line"></div><div class="line">//输出数组中的内容 遍历</div><div class="line">for(var i = 0; i&lt;newArr2.length; i++)&#123;</div><div class="line">	console.log(newArr2[i]);</div><div class="line">	&#125;	</div><div class="line">//这里的i是索引</div><div class="line">for(var i in newArr2)&#123;</div><div class="line">	console.log(i,newArr2[i]);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="JS的内置对象"><a href="#JS的内置对象" class="headerlink" title="JS的内置对象"></a>JS的内置对象</h3><p>window 关于window有两点<br>1.所有的全局变量都是window的属性<br>2.所有的全局的函数都是window的函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//动态跳转</div><div class="line">window.location.href = &apos;http://baidu.com&apos;;</div><div class="line">location.href = &apos;http://www.taobao.com&apos;;</div></pre></td></tr></table></figure>
+<h3 id="JS的Dom操作"><a href="#JS的Dom操作" class="headerlink" title="JS的Dom操作"></a>JS的Dom操作</h3><p>Dom的用途<br>Document的用途<br>1.动态的获取当前网页中的任意一个标签<br>2.动态的获取到的标签进行crud<br>create retrieve update delete</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//动态插入</div><div class="line">document.write(&apos;Hello World&apos;);</div><div class="line">//插入标签</div><div class="line">document.write(&apos;&lt;input type = &quot;date&quot;&gt;&apos;);</div><div class="line">//插入一张图片</div><div class="line">document.write(&apos;&lt;img src=&quot;img/img01.png&gt;&apos;);</div></pre></td></tr></table></figure>
+<p>DOM的curd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">//c create</div><div class="line">//增</div><div class="line">//1</div><div class="line">document.write(&apos;HelloWorld&apos;);</div><div class="line">document.write(&apos;&lt;button&gt;&apos;)</div><div class="line"></div><div class="line">//2</div><div class="line">var div = document.createElement(&apos;div&apos;);</div><div class="line">div.style.backgroundColor = &apos;red&apos;;</div><div class="line">div.style.width = &apos;500px&apos;;</div><div class="line">div.style.height = &apos;300px&apos;;</div><div class="line">//添加到父标签</div><div class="line">document.body.appendChild(div);</div><div class="line">//往div中插入一张图片</div><div class="line">var img = document.createElement(&apos;img&apos;);</div><div class="line">img.src = &apos;img/icon.png&apos;;</div><div class="line">div.appendChild(img);</div><div class="line"></div><div class="line">//向p标签插入东西</div><div class="line">var p = document.getElementById(&apos;word&apos;);</div><div class="line">var img2 = document.createElement(&apos;img&apos;);</div><div class="line">img2.src = &apos;img/icon.png&apos;;</div><div class="line">p.appendChild(img2);</div><div class="line"></div><div class="line">//r retrieve</div><div class="line">//查</div><div class="line"></div><div class="line">//find(document.body);</div><div class="line">//function find(object)&#123;</div><div class="line">//	for(var i in object)&#123;</div><div class="line">//		console.log(object[i]);</div><div class="line">//	&#125;</div><div class="line">//&#125;</div><div class="line"></div><div class="line">console.log(document.body.childNodes);</div><div class="line"></div><div class="line">//u update</div><div class="line">//改</div><div class="line">//拿到对应的标签  做出改变</div><div class="line"></div><div class="line">//d delete</div><div class="line">//删</div><div class="line">//document.body.removeChild(p);</div><div class="line">//拿到当前标签的父标签  再来删除</div><div class="line">//p.parentNode.removeChild(p);</div><div class="line">//p.remove();</div></pre></td></tr></table></figure>
+<h3 id="JS语法的灵活性"><a href="#JS语法的灵活性" class="headerlink" title="JS语法的灵活性"></a>JS语法的灵活性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"> || &amp;&amp;</div><div class="line">逻辑或 ||</div><div class="line">var  name1 = &apos;name1&apos;;</div><div class="line">var  name2 = &apos;name2&apos;;</div><div class="line">var  name3 = &apos;name3&apos;;</div><div class="line">var  name4 = &apos;name4&apos;;</div><div class="line">var newName = null;</div><div class="line">//判断</div><div class="line">if(name1)&#123;</div><div class="line">	newName = name1;</div><div class="line">	&#125;else if(name2)&#123;</div><div class="line">	newName = name2;</div><div class="line">	&#125;else if(name3)&#123;</div><div class="line">	newName = name3;</div><div class="line">	&#125;else if(name4)&#123;</div><div class="line">	newName = name4;</div><div class="line">	&#125;</div><div class="line">	console.log(newName);</div><div class="line">			</div><div class="line">//新做法</div><div class="line">newName = name1||name2||name3||name4;</div><div class="line">console.log(newName);</div><div class="line">			</div><div class="line">//逻辑与 &amp;&amp;</div><div class="line">var age = 22;</div><div class="line">if(age&gt;20)&#123;</div><div class="line">	console.log(&apos;你可以结婚了&apos;);</div><div class="line">	&#125;</div><div class="line">//新做法</div><div class="line">(age&gt;20)&amp;&amp;console.log(&apos;你可以结婚了!!!&apos;);</div></pre></td></tr></table></figure>
+<h3 id="JS中的函数-匿名函数"><a href="#JS中的函数-匿名函数" class="headerlink" title="JS中的函数 - 匿名函数"></a>JS中的函数 - 匿名函数</h3><p>这就是个自己封装的函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//两个数相加</div><div class="line">function sum( number1,  number2)&#123;	</div><div class="line">		return number1 + number2 ;</div><div class="line">	&#125;</div><div class="line">//调用函数</div><div class="line">var result =  sum(10,20);</div><div class="line"></div><div class="line">//万能的加法函数</div><div class="line">function sum2(numbers)&#123;</div><div class="line">	var count = 0;</div><div class="line">	for(var i = 0;i&lt;numbers.length;i++)&#123;</div><div class="line">		count+=numbers[i];</div><div class="line">		&#125;</div><div class="line">		return count;</div><div class="line">	&#125;</div><div class="line">var numbers = [10,23,46,786,97,78];</div><div class="line">var sumResult = sum2(numbers);</div><div class="line"></div><div class="line">//内置数组  arguments</div><div class="line">function sum3()&#123;</div><div class="line">	var count = 0;</div><div class="line">	for(var i = 0;i&lt;arguments.length;i++)&#123;</div><div class="line">		count += arguments[i];</div><div class="line">		&#125;</div><div class="line">		return count;</div><div class="line">	&#125;</div><div class="line">var sumResult3 = sum3(10,23,46,97,78);</div></pre></td></tr></table></figure>
+<h3 id="产生对象"><a href="#产生对象" class="headerlink" title="产生对象"></a>产生对象</h3><p>如何自定义一个对象 带有属性和方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">//this this在哪个对象中就代表哪个对象</div><div class="line">//定义一个对象</div><div class="line">var dog  = &#123;</div><div class="line">		name : &apos;wangcai&apos;,</div><div class="line">		age : 4,</div><div class="line">		height : 1.2,</div><div class="line">		friend : [&apos;xixi&apos;,&apos;lili&apos;],</div><div class="line">		eat: function(something)&#123;</div><div class="line">				console.log(this.name + &apos;---吃&apos; + something);</div><div class="line">		&#125;,</div><div class="line">		run: function(somewhere)&#123;</div><div class="line">				console.log(this.name + &apos;---跑&apos; +somewhere);</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">//调用狗对象的属性</div><div class="line">console.log(dog.name,dog.friend);</div><div class="line">//调用狗的方法</div><div class="line">dog.eat(&apos;骨头&apos;);</div><div class="line">dog.run(&apos;公园&apos;);</div><div class="line"></div><div class="line"></div><div class="line">//如何批量产生对象</div><div class="line">//构造函数</div><div class="line">function Dog()&#123;</div><div class="line">	this.name = null;</div><div class="line">	this.height = null;</div><div class="line">	this.frirens = [];</div><div class="line">	this.age = null;</div><div class="line">	this.eat = function(something)&#123;</div><div class="line">			console.log(this.name + &apos;吃&apos; + something);</div><div class="line">			&#125;,</div><div class="line">	this.run= function(somewhere)&#123;</div><div class="line">			console.log(this.name + &apos;跑&apos; + somewhere);</div><div class="line">			&#125;</div><div class="line">	&#125;</div><div class="line">//批量产生狗</div><div class="line">var dog1 = new Dog();</div><div class="line">var dog2 = new Dog();</div><div class="line">//赋值</div><div class="line">dog1.name = &apos;xiaohei&apos;;</div><div class="line">dog1.height = 1.23;</div><div class="line">dog1.run(&apos;火星&apos;);</div><div class="line">dog1.friend = [&apos;xiaohua&apos;];</div><div class="line">//赋值</div><div class="line">dog2.name = &apos;xiaobai&apos;;</div><div class="line">dog2.height = 0.53;</div><div class="line">dog2.eat(&apos;月亮&apos;);</div><div class="line">dog2.friend = [&apos;xiaohuang&apos;];</div><div class="line"></div><div class="line">//构造函数</div><div class="line">function Cat(name,height,age,friends)&#123;</div><div class="line">	this.name = name;</div><div class="line">	this.height = height;</div><div class="line">	this.frirens = friends;</div><div class="line">	this.age = age;</div><div class="line">	this.eat = function(something)&#123;</div><div class="line">		console.log(this.name + &apos;吃&apos; + something);</div><div class="line">		&#125;,</div><div class="line">	this.run= function(somewhere)&#123;</div><div class="line">		console.log(this.name + &apos;跑&apos; + somewhere);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">//创建新对象</div><div class="line">var cat = new Cat(&apos;mi&apos;,12,23,[&apos;324&apos;]);</div><div class="line">cat.eat(&apos;猫粮&apos;);</div></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h5 id="一些其他关键字"><a href="#一些其他关键字" class="headerlink" title="一些其他关键字"></a>一些其他关键字</h5><p>setTimeout(“alert(‘时间到了’)”,3000);<br>setTimeout  在某个函数以内执行一个函数，只执行一次<br>setInteger 让程序每隔一定时间来调用函数一次</p>
+<p>鼠标事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">当鼠标进入图片</div><div class="line">img.onmouseover = function()&#123;</div><div class="line">	alert(&apos;手指进入图片&apos;);</div><div class="line">&#125;</div><div class="line">当手指在图片上移动</div><div class="line">img.onmousemove = function()&#123;&#125;</div><div class="line">当鼠标移出图片</div><div class="line">img.onmouseout = function()&#123;&#125;</div><div class="line">当前页面加载完毕</div><div class="line">window.onload = function()&#123;&#125;</div></pre></td></tr></table></figure>
+<p>canvas 绘制图形<br>这个canvas和OC中的drawRect类似</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">canvas </div><div class="line">起点</div><div class="line">context.moveTo(100,100);</div><div class="line">终点</div><div class="line">context.lineTo(200,200);</div><div class="line">绘制</div><div class="line">context.stroke()</div><div class="line">设置线条的颜色和宽度</div><div class="line">context.strokeStyle = &apos;red&apos;;</div><div class="line">context.lineWidth = 5;</div><div class="line">填充</div><div class="line">context,fillStyle = &apos;blue&apos;;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/12/初学HTML5/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1102,7 +1243,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
