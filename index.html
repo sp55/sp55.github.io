@@ -313,16 +313,14 @@
 
       
         
-          
-            <h3 id="iOS9新增的一些新特性"><a href="#iOS9新增的一些新特性" class="headerlink" title="iOS9新增的一些新特性"></a>iOS9新增的一些新特性</h3><p>####1.关键字</p>
-<p>iOS9新出的关键字:用来修饰属性，或者方法的参数，方法的返回值<br>好处<br>1.迎合swift<br>2.提高开发人员的开发规范，减少程序员之间的交流<br>iOS9新出的关键字nonnull,nullable只能修饰对象，不能修饰基本数据类型<br>nullable:表示可以为空</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//nullable:表示可以为空</div><div class="line">//两种常用方式</div><div class="line">@property(nonatomic,strong,nullable)NSString *nameStr1;</div><div class="line">@property(nonatomic,strong)NSString *_Nullable nameStr2;</div><div class="line"></div><div class="line">//nonnull: non:非 null:空</div><div class="line">@property(nonatomic,strong,nonnull)NSString *icon1;</div><div class="line">@property(nonatomic,strong)NSString *_Nonnull icon2;</div><div class="line"></div><div class="line">//方法中关键字的书写规范</div><div class="line">-(nonnull NSString *)test1:(nonnull NSString *)str1;</div><div class="line">-(NSString *_Nonnull)test2:(NSString *_Nonnull)str2;</div></pre></td></tr></table></figure>
-<p>对于上面的nonnull，新的Xcode里面的UIKit框架多了NS_ASSUME_NONNULL_BEGIN和NS_ASSUME_NONNULL_END两个字段，这两句话的意思和nonnull一样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">在NS_ASSUME_NONNULL_BEGIN和NS_ASSUME_NONNULL_END之间，定义的所有属性和方法默认都是nonnull，可以发现苹果的对象都是这样修饰的</div><div class="line"> </div><div class="line">NS_ASSUME_NONNULL_BEGIN</div><div class="line">@property(nonatomic)NSString *nStr;</div><div class="line">NS_ASSUME_NONNULL_END</div></pre></td></tr></table></figure>
-<p>除了上面的几个修饰符，有的对象还有null_resettable这个修饰符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> null_resettable: get方法不能返回为空， set方法可以为空</div><div class="line"> 注意:如果使用null_resettable，必须重写get方法</div><div class="line"> */</div><div class="line">@property(nonatomic,strong,null_resettable) NSString *testStr;</div><div class="line"></div><div class="line">重写get方法</div><div class="line">//法一</div><div class="line">-(NSString *)testStr&#123;</div><div class="line">    if (_testStr ==nil) &#123;</div><div class="line">        _testStr = @&quot;重写get方法 法1&quot;;</div><div class="line">    &#125;</div><div class="line">    return _testStr;</div><div class="line">&#125;</div><div class="line">//法2</div><div class="line">-(void)setTestStr:(NSString *)testStr</div><div class="line">&#123;</div><div class="line">    if (testStr == nil) &#123;</div><div class="line">        testStr = @&quot;重写get方法 法2&quot;;</div><div class="line">    &#125;</div><div class="line">    _testStr = testStr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">还有一个_Null_unspecified的修饰符，会在self.testStr的时候出现。用self.testStr的时候不确定是取值还是赋值，不确定是set还是get  没什么意义</div><div class="line"></div><div class="line">@property(nonatomic,strong) NSString *_Null_unspecified testStr1;</div><div class="line"></div><div class="line"></div><div class="line">_Null_unspecified:不确定是否为空</div></pre></td></tr></table></figure>
-
-          
+          <h3 id="iOS9新增的一些新特性"><a href="#iOS9新增的一些新特性" class="headerlink" title="iOS9新增的一些新特性"></a>iOS9新增的一些新特性</h3>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/02/iOS9新特性/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
