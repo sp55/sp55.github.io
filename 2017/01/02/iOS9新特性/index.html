@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/01/02/iOS9新特性/index.html">
 <meta property="og:site_name" content="Ji's Blog">
 <meta property="og:description" content="iOS9新增的一些新特性">
-<meta property="og:updated_time" content="2017-01-02T13:42:47.000Z">
+<meta property="og:updated_time" content="2017-01-02T13:44:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS9新特性">
 <meta name="twitter:description" content="iOS9新增的一些新特性">
@@ -327,7 +327,7 @@
 <p>泛型 协变和异变</p>
 <h6 id="协变"><a href="#协变" class="headerlink" title="协变"></a>协变</h6><p>__covariant(协变):用于数据强制类型，可以向上强转，子类可以转成父类（NSArray点进去可以看到修饰符和NSMutableArray不一样）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">只需要在Persion中的ObjectType前面加上__covariant</div><div class="line">@interface Person&lt;__covariant ObjectType&gt; : NSObject</div><div class="line"></div><div class="line">然后在ViewController中调用的时候就可以使用了</div><div class="line">Person&lt;Language *&gt; *p = [Person new];</div><div class="line">    </div><div class="line">Person&lt;IOS *&gt; *iosP  = [[Person alloc] init];</div><div class="line">iosP.language = [IOS new];</div><div class="line"></div><div class="line">//如果子类想给父类赋值，协变</div><div class="line">p = iosP;</div></pre></td></tr></table></figure>
-<p>__contravariant(逆变):用于泛型类型数据强制类型,可以向下强转，父类可以转成子类</p>
+<h6 id="逆变"><a href="#逆变" class="headerlink" title="逆变"></a>逆变</h6><p>__contravariant(逆变):用于泛型类型数据强制类型,可以向下强转，父类可以转成子类</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">和协变类似，Persion后的修饰词改成__contravariant就是逆变</div><div class="line">@interface Person&lt;__contravariant ObjectType&gt; : NSObject</div><div class="line"></div><div class="line">Person&lt;Language *&gt; *p = [Person new];</div><div class="line">Person&lt;IOS *&gt; *iosP  = [[Person alloc] init];</div><div class="line">iosP.language = [IOS new];</div><div class="line">//逆变</div><div class="line">iosP = p;</div></pre></td></tr></table></figure>
 
       
@@ -528,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS9新增的一些新特性"><span class="nav-number">1.</span> <span class="nav-text">iOS9新增的一些新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-关键字"><span class="nav-number">1.1.</span> <span class="nav-text">1.关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-泛型"><span class="nav-number">1.2.</span> <span class="nav-text">2.泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#协变"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">协变</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS9新增的一些新特性"><span class="nav-number">1.</span> <span class="nav-text">iOS9新增的一些新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-关键字"><span class="nav-number">1.1.</span> <span class="nav-text">1.关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-泛型"><span class="nav-number">1.2.</span> <span class="nav-text">2.泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#协变"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">协变</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#逆变"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">逆变</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
