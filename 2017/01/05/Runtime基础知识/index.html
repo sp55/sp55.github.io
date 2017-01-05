@@ -102,7 +102,7 @@ RunTime简称运行时。OC就是运行时机制，也就是在运行时候的�
 在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要声明过就不会">
 <meta property="og:image" content="http://yoursite.com/Snip20151013_4.png">
 <meta property="og:image" content="http://yoursite.com/Snip20151013_2.png">
-<meta property="og:updated_time" content="2017-01-05T14:24:50.000Z">
+<meta property="og:updated_time" content="2017-01-05T14:26:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Runtime基础知识">
 <meta name="twitter:description" content="一、runtime简介
@@ -335,11 +335,12 @@ RunTime简称运行时。OC就是运行时机制，也就是在运行时候的�
 <li>对于OC的函数，属于<code>动态调用过程</code>，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。</li>
 <li>事实证明：<ul>
 <li>在编译阶段，OC可以<code>调用任何函数</code>，即使这个函数并未实现，只要声明过就不会报错。</li>
-<li>在编译阶段，C语言调用<code>未实现的函数</code>就会报错。</li>
+<li>在编译阶段，C语言调用<code>未实现的函数</code>就会报错。<a id="more"></a>
+<h3 id="二、runtime作用"><a href="#二、runtime作用" class="headerlink" title="二、runtime作用"></a>二、runtime作用</h3></li>
 </ul>
 </li>
 </ul>
-<h3 id="二、runtime作用"><a href="#二、runtime作用" class="headerlink" title="二、runtime作用"></a>二、runtime作用</h3><p>####1.发送消息</p>
+<p>####1.发送消息</p>
 <ul>
 <li>方法调用的本质，就是让对象发送消息。</li>
 <li>objc_msgSend,只有对象才能发送消息，因此以objc开头.</li>
