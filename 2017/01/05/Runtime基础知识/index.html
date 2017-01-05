@@ -102,7 +102,8 @@ RunTime简称运行时。OC就是运行时机制，也就是在运行时候的�
 在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要声明过就不会">
 <meta property="og:image" content="http://yoursite.com/images/Snip20151013_4.png">
 <meta property="og:image" content="http://yoursite.com/images/Snip20151013_2.png">
-<meta property="og:updated_time" content="2017-01-05T14:55:22.000Z">
+<meta property="og:image" content="http://yoursite.com/images/Snip20151013_3.png">
+<meta property="og:updated_time" content="2017-01-05T14:58:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Runtime基础知识">
 <meta name="twitter:description" content="一、runtime简介
@@ -360,14 +361,16 @@ RunTime简称运行时。OC就是运行时机制，也就是在运行时候的�
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">@implementation ViewController</div><div class="line"></div><div class="line"></div><div class="line">- (void)viewDidLoad &#123;</div><div class="line">    [super viewDidLoad];</div><div class="line">    // Do any additional setup after loading the view, typically from a nib.</div><div class="line">    // 需求：给imageNamed方法提供功能，每次加载图片就判断下图片是否加载成功。</div><div class="line">    // 步骤一：先搞个分类，定义一个能加载图片并且能打印的方法+ (instancetype)imageWithName:(NSString *)name;</div><div class="line">    // 步骤二：交换imageNamed和imageWithName的实现，就能调用imageWithName，间接调用imageWithName的实现。</div><div class="line">    UIImage *image = [UIImage imageNamed:@&quot;123&quot;];</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line"></div><div class="line">@implementation UIImage (Image)</div><div class="line">// 加载分类到内存的时候调用</div><div class="line">+ (void)load</div><div class="line">&#123;</div><div class="line">    // 交换方法</div><div class="line">    </div><div class="line">    // 获取imageWithName方法地址</div><div class="line">    Method imageWithName = class_getClassMethod(self, @selector(imageWithName:));</div><div class="line">    </div><div class="line">    // 获取imageWithName方法地址</div><div class="line">    Method imageName = class_getClassMethod(self, @selector(imageNamed:));</div><div class="line"></div><div class="line">    // 交换方法地址，相当于交换实现方式</div><div class="line">    method_exchangeImplementations(imageWithName, imageName);</div><div class="line">    </div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">// 不能在分类中重写系统方法imageNamed，因为会把系统的功能给覆盖掉，而且分类中不能调用super.</div><div class="line"></div><div class="line">// 既能加载图片又能打印</div><div class="line">+ (instancetype)imageWithName:(NSString *)name</div><div class="line">&#123;</div><div class="line">   </div><div class="line">    // 这里调用imageWithName，相当于调用imageName</div><div class="line">    UIImage *image = [self imageWithName:name];</div><div class="line">    </div><div class="line">    if (image == nil) &#123;</div><div class="line">        NSLog(@&quot;加载空的图片&quot;);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return image;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
 <ul>
-<li>交换原理：<ul>
-<li>交换之前：<br><img src="/images/Snip20151013_2.png" alt=""></li>
+<li><p>交换原理：</p>
+<ul>
+<li><p>交换之前：<br><img src="/images/Snip20151013_2.png" alt=""></p>
+</li>
+<li><p>交换之后：<br><img src="/images/Snip20151013_3.png" alt=""></p>
+</li>
 </ul>
 </li>
 </ul>
-<pre><code>* 交换之后：
-![](/images/Snip20151013_3.png)
-</code></pre><h4 id="3-动态添加方法"><a href="#3-动态添加方法" class="headerlink" title="3.动态添加方法"></a>3.动态添加方法</h4><ul>
+<h4 id="3-动态添加方法"><a href="#3-动态添加方法" class="headerlink" title="3.动态添加方法"></a>3.动态添加方法</h4><ul>
 <li>开发使用场景：如果一个类方法非常多，加载类到内存的时候也比较耗费资源，需要给每个方法生成映射表，可以使用动态给某个类，添加方法解决。</li>
 <li>经典面试题：有没有使用performSelector，其实主要想问你有没有动态添加过方法。</li>
 <li>简单使用</li>
